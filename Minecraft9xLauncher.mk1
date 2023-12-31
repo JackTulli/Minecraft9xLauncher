@@ -1,0 +1,24 @@
+!define BLANK ""
+C:\Users\Jack\Desktop\laucnher\launcher.obj : C:\Users\Jack\Desktop\laucnher&
+\launcher.cpp .AUTODEPEND
+ @C:
+ cd C:\Users\Jack\Desktop\laucnher
+ *wpp386 launcher.cpp -i="C:\WATCOM/h;C:\WATCOM/h/nt" -w4 -e25 -zq -od -d2 -&
+6r -bt=nt -fo=.obj -mf -xs -xr
+
+C:\Users\Jack\Desktop\laucnher\Minecraft9xLauncher.exe : C:\Users\Jack\Deskt&
+op\laucnher\launcher.obj .AUTODEPEND
+ @C:
+ cd C:\Users\Jack\Desktop\laucnher
+ @%write Minecraft9xLauncher.lk1 FIL launcher.obj
+ @%append Minecraft9xLauncher.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b Minecraft9xLauncher.imp 
+ @%append Minecraft9xLauncher.lk1 LIBR Minecraft9xLauncher.imp
+!endif
+!ifneq BLANK ""
+ @%append Minecraft9xLauncher.lk1 
+!endif
+ *wlink name Minecraft9xLauncher d all sys nt_win op m op maxe=25 op q op sy&
+mf @Minecraft9xLauncher.lk1
+
