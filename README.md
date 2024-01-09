@@ -1,1 +1,1 @@
-Compile with openwatcom 1.9 will run on windows 95 and up. minecraft will only run on windows 98 and up. you must supply your own jars 
+Compile with openwatcom 1.9 will run on windows 95 and up. minecraft will only run on windows 98 with kernelx and up. you must supply your own jars. I have only tested up to version 1.5.2. some minor changes would need to be made to use 1.6.4 and above.     
