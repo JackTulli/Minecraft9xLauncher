@@ -156,7 +156,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
 
     // Create UI elements
-    hLabelInfo = CreateWindow("STATIC", "Version A:1.2.2 Release Notes In this update I have made the Minecraft 9x Launcher more user friendly with a redesigned interface that includes a dropdown menu for selecting versions a central Play button and a username field at the bottom right The libraries folder is now in the main resources directory simplifying file management This update fully supports Minecraft 1.6.4 to 1.8.9. It should be relativly easy to get 1.12.2 working but I am having issues with pulse audio. If anyone wishes to help with the project feel free to contact me on discord jtofexstinction ENJOY!", WS_VISIBLE | WS_CHILD , 95, 100, 350, 200, hwnd, NULL, hInstance, NULL);
+    hLabelInfo = CreateWindow("STATIC", "Version A:1.2.2 Release Notes In this update I have made the Minecraft 9x Launcher more user friendly with a redesigned interface that includes a dropdown menu for selecting versions a central Play button and a username field at the bottom right The libraries folder is now in the main resources directory simplifying file management This update fully supports Minecraft Alpha 1.0 to 1.12.2 Forge. feel free to contact me on discord jtofexstinction ENJOY!", WS_VISIBLE | WS_CHILD , 95, 100, 350, 200, hwnd, NULL, hInstance, NULL);
 
     hDropdownVersion = CreateWindow("COMBOBOX", "Version", CBS_DROPDOWNLIST | WS_VISIBLE | WS_CHILD | WS_VSCROLL, 0, 345, 150, 200, hwnd, NULL, hInstance, NULL);
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.6.4");
