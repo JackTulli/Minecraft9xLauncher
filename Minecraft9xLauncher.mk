@@ -1,3 +1,5 @@
-project : C:\Users\Jack\Desktop\laucnher\Minecraft9xLauncher.exe .SYMBOLIC
+project : C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLaun&
+cher-main\Minecraft9xLauncher.exe .SYMBOLIC
 
-!include C:\Users\Jack\Desktop\laucnher\Minecraft9xLauncher.mk1
+!include C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLaunc&
+her-main\Minecraft9xLauncher.mk1

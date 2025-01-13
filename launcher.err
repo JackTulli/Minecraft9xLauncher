@@ -1,4 +1,4 @@
-launcher.cpp(124): Warning! W726: col(1) no reference to formal parameter 'hPrevInstance'
-launcher.cpp(75): Note! N392: col(51) definition: 'HINSTANCE__ * hPrevInstance' in 'int stdcall WinMain( HINSTANCE__ *, HINSTANCE__ *, char *, int )'
-launcher.cpp(124): Warning! W726: col(1) no reference to formal parameter 'lpCmdLine'
-launcher.cpp(75): Note! N392: col(72) definition: 'char * lpCmdLine' in 'int stdcall WinMain( HINSTANCE__ *, HINSTANCE__ *, char *, int )'
+launcher.cpp(189): Warning! W726: col(1) no reference to formal parameter 'hPrevInstance'
+launcher.cpp(123): Note! N392: col(51) definition: 'HINSTANCE__ * hPrevInstance' in 'int stdcall WinMain( HINSTANCE__ *, HINSTANCE__ *, char *, int )'
+launcher.cpp(189): Warning! W726: col(1) no reference to formal parameter 'lpCmdLine'
+launcher.cpp(123): Note! N392: col(72) definition: 'char * lpCmdLine' in 'int stdcall WinMain( HINSTANCE__ *, HINSTANCE__ *, char *, int )'

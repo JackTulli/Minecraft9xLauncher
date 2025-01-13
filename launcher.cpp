@@ -2,26 +2,79 @@
 #include <stdio.h>
 
 HBITMAP g_hBitmap = NULL;
-HWND hButton173, hButton10, hButton125, hButton147, hButton152, hButton112, hButtonBetaHacks;
-HWND hTextbox, hLabel;
+HWND hButtonPlay, hDropdownVersion, hTextboxUsername, hLabelInfo;
 
-void ReadInfoFile() {
-    // As hInfoTextbox is not used, you might want to replace it with the appropriate handling
+void LogError(const char *message) {
+    FILE *logFile = fopen("log.txt", "a");
+    if (logFile) {
+        fprintf(logFile, "Error: %s\n", message);
+        fclose(logFile);
+    }
 }
 
-void CreateBatFile(const char *version, const char *additionalText) {
+void CreateBatFile(const char *version, const char *username) {
     FILE *fp = fopen("run.bat", "w");
     if (fp) {
-        fprintf(fp, "cd resources\n");
-        fprintf(fp, "cd versions\n");
-        fprintf(fp, "cd %s\n", version);
-        fprintf(fp, "java -Xms1M -Xmx999M -Djava.library.path=natives/ -cp \"minecraft.jar;lwjgl.jar;lwjgl_util.jar\" net.minecraft.client.Minecraft ");
-        fprintf(fp, "%s\n", additionalText);
+        // For older versions (1.5.2 and earlier)
+        if (strcmp(version, "beta1.7.3") == 0 || strcmp(version, "1.0") == 0 || strcmp(version, "1.2.5") == 0 ||
+            strcmp(version, "1.4.7") == 0 || strcmp(version, "1.5.2") == 0 || strcmp(version, "alpha1.1.2") == 0 ||
+            strcmp(version, "betahacks") == 0) {
+            
+            // Command for launching older versions
+            fprintf(fp, "cd resources\\versions\\%s\n", version);
+            fprintf(fp, "java -Xms128M -Xmx256M -Djava.library.path=natives/ -cp \"minecraft.jar;lwjgl.jar;lwjgl_util.jar\" net.minecraft.client.Minecraft ");
+            fprintf(fp, "%s\n", username);
+
+        } else if (strcmp(version, "1.8.9") == 0) {
+            // Command for launching Minecraft 1.8.9
+            fprintf(fp, "cd resources\\versions\\%s\n", version);
+            fprintf(fp, "java -Xms128M -Xmx512m -Djava.library.path=\"natives\" ");
+            fprintf(fp, "-cp \"%s.jar;../../libraries/commons-lang3-3.3.2.jar;../../libraries/netty-all-4.0.23.Final.jar;../../libraries/*\" net.minecraft.client.main.Main ", version);
+            fprintf(fp, "--username %s --version %s --gameDir . --assetsDir assets ", username, version);
+            fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username);
+
+        } else if (strcmp(version, "1.6.4") == 0 || strcmp(version, "1.7.10") == 0) {
+            // Command for launching Minecraft 1.6.4 and 1.7.10
+            fprintf(fp, "cd resources\\versions\\%s\n", version);
+            fprintf(fp, "java -Xms128M -Xmx512m -Djava.library.path=\"natives\" ");
+            fprintf(fp, "-cp \"%s.jar;../../libraries/*\" net.minecraft.client.main.Main ", version);
+            fprintf(fp, "--username %s --version %s --gameDir . --assetsDir assets ", username, version);
+            fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username);
+
+        } else  if (strcmp(version, "1.12.2forge") == 0) {
+            // Command for launching Minecraft 1.12.2 with Forge, exactly as provided
+			fprintf(fp, "cd resources\\versions\\%s\n", version);
+            fprintf(fp, "java -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx999m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn256m ");
+            fprintf(fp, "-Djava.library.path=\"natives\" ");
+            fprintf(fp, "-cp \"1.12.2.jar;..\\..\\libraries\\net\\minecraftforge\\forge\\1.12.2-14.23.5.2855\\forge-1.12.2-14.23.5.2855.jar;..\\..\\libraries\\org\\ow2\\asm\\asm-debug-all\\5.2\\asm-debug-all-5.2.jar;..\\..\\libraries\\net\\minecraft\\launchwrapper\\1.12\\launchwrapper-1.12.jar;..\\..\\libraries\\org\\jline\\jline\\3.5.1\\jline-3.5.1.jar;..\\..\\libraries\\com\\typesafe\\akka\\akka-actor_2.11\\2.3.3\\akka-actor_2.11-2.3.3.jar;..\\..\\libraries\\com\\typesafe\\config\\1.2.1\\config-1.2.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-actors-migration_2.11\\1.1.0\\scala-actors-migration_2.11-1.1.0.jar;..\\..\\libraries\\org\\scala-lang\\scala-compiler\\2.11.1\\scala-compiler-2.11.1.jar;..\\..\\libraries\\org\\scala-lang\\plugins\\scala-continuations-library_2.11\\1.0.2_mc\\scala-continuations-library_2.11-1.0.2_mc.jar;..\\..\\libraries\\org\\scala-lang\\plugins\\scala-continuations-plugin_2.11.1\\1.0.2_mc\\scala-continuations-plugin_2.11.1-1.0.2_mc.jar;..\\..\\libraries\\org\\scala-lang\\scala-library\\2.11.1\\scala-library-2.11.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-parser-combinators_2.11\\1.0.1\\scala-parser-combinators_2.11-1.0.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-reflect\\2.11.1\\scala-reflect-2.11.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-swing_2.11\\1.0.1\\scala-swing_2.11-1.0.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-xml_2.11\\1.0.2\\scala-xml_2.11-1.0.2.jar;..\\..\\libraries\\lzma\\lzma\\0.0.1\\lzma-0.0.1.jar;..\\..\\libraries\\java3d\\vecmath\\1.5.2\\vecmath-1.5.2.jar;..\\..\\libraries\\net\\sf\\trove4j\\trove4j\\3.0.3\\trove4j-3.0.3.jar;..\\..\\libraries\\org\\apache\\maven\\maven-artifact\\3.5.3\\maven-artifact-3.5.3.jar;..\\..\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\5.0.3\\jopt-simple-5.0.3.jar;..\\..\\libraries\\com\\mojang\\patchy\\1.3.9\\patchy-1.3.9.jar;..\\..\\libraries\\oshi-project\\oshi-core\\1.1\\oshi-core-1.1.jar;..\\..\\libraries\\net\\java\\dev\\jna\\jna\\4.4.0\\jna-4.4.0.jar;..\\..\\libraries\\net\\java\\dev\\jna\\platform\\3.4.0\\platform-3.4.0.jar;..\\..\\libraries\\com\\ibm\\icu\\icu4j-core-mojang\\51.2\\icu4j-core-mojang-51.2.jar;..\\..\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\5.0.3\\jopt-simple-5.0.3.jar;..\\..\\libraries\\com\\paulscode\\codecjorbis\\20101023\\codecjorbis-20101023.jar;..\\..\\libraries\\com\\paulscode\\codecwav\\20101023\\codecwav-20101023.jar;..\\..\\libraries\\com\\paulscode\\libraryjavasound\\20101123\\libraryjavasound-20101123.jar;..\\..\\libraries\\com\\paulscode\\librarylwjglopenal\\20100824\\librarylwjglopenal-20100824.jar;..\\..\\libraries\\com\\paulscode\\soundsystem\\20120107\\soundsystem-20120107.jar;..\\..\\libraries\\io\\netty\\netty-all\\4.1.9.Final\\netty-all-4.1.9.Final.jar;..\\..\\libraries\\com\\google\\guava\\guava\\21.0\\guava-21.0.jar;..\\..\\libraries\\org\\apache\\commons\\commons-lang3\\3.5\\commons-lang3-3.5.jar;..\\..\\libraries\\commons-io\\commons-io\\2.5\\commons-io-2.5.jar;..\\..\\libraries\\commons-codec\\commons-codec\\1.10\\commons-codec-1.10.jar;..\\..\\libraries\\net\\java\\jinput\\jinput\\2.0.5\\jinput-2.0.5.jar;..\\..\\libraries\\net\\java\\jutils\\jutils\\1.0.0\\jutils-1.0.0.jar;..\\..\\libraries\\com\\google\\code\\gson\\gson\\2.8.0\\gson-2.8.0.jar;..\\..\\libraries\\com\\mojang\\authlib\\1.5.25\\authlib-1.5.25.jar;..\\..\\libraries\\com\\mojang\\realms\\1.10.22\\realms-1.10.22.jar;..\\..\\libraries\\org\\apache\\commons\\commons-compress\\1.8.1\\commons-compress-1.8.1.jar;..\\..\\libraries\\org\\apache\\httpcomponents\\httpclient\\4.3.3\\httpclient-4.3.3.jar;..\\..\\libraries\\commons-logging\\commons-logging\\1.1.3\\commons-logging-1.1.3.jar;..\\..\\libraries\\org\\apache\\httpcomponents\\httpcore\\4.3.2\\httpcore-4.3.2.jar;..\\..\\libraries\\it\\unimi\\dsi\\fastutil\\7.1.0\\fastutil-7.1.0.jar;..\\..\\libraries\\org\\apache\\logging\\log4j\\log4j-api\\2.8.1\\log4j-api-2.8.1.jar;..\\..\\libraries\\org\\apache\\logging\\log4j\\log4j-core\\2.8.1\\log4j-core-2.8.1.jar;..\\..\\libraries\\org\\lwjgl\\lwjgl\\lwjgl\\2.9.4-nightly-20150209\\lwjgl-2.9.4-nightly-20150209.jar;..\\..\\libraries\\org\\lwjgl\\lwjgl\\lwjgl_util\\2.9.4-nightly-20150209\\lwjgl_util-2.9.4-nightly-20150209.jar;..\\..\\libraries\\com\\mojang\\text2speech\\1.10.3\\text2speech-1.10.3.jar\" ");
+            fprintf(fp, "net.minecraft.launchwrapper.Launch ");
+            fprintf(fp, "--username %s --version 1.12.2 --gameDir . --assetsDir assets --accessToken 0 --userProperties {} --uuid %s --userType legacy --width 1280 --height 720 --tweakClass net.minecraftforge.fml.common.launcher.FMLTweaker\n", username, username);
+        
+		} else if (strcmp(version, "1.12.2") == 0) {
+    // Command for launching Minecraft 1.12.2 without Forge
+	fprintf(fp, "cd resources\\versions\\%s\n", version);
+    fprintf(fp, "java -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx999m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn256m ");
+    fprintf(fp, "-Djava.library.path=\"natives\" ");
+    fprintf(fp, "-cp \"1.12.2.jar;..\\..\\libraries\\org\\ow2\\asm\\asm-debug-all\\5.2\\asm-debug-all-5.2.jar;..\\..\\libraries\\net\\minecraft\\launchwrapper\\1.12\\launchwrapper-1.12.jar;..\\..\\libraries\\org\\jline\\jline\\3.5.1\\jline-3.5.1.jar;..\\..\\libraries\\com\\typesafe\\akka\\akka-actor_2.11\\2.3.3\\akka-actor_2.11-2.3.3.jar;..\\..\\libraries\\com\\typesafe\\config\\1.2.1\\config-1.2.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-actors-migration_2.11\\1.1.0\\scala-actors-migration_2.11-1.1.0.jar;..\\..\\libraries\\org\\scala-lang\\scala-compiler\\2.11.1\\scala-compiler-2.11.1.jar;..\\..\\libraries\\org\\scala-lang\\plugins\\scala-continuations-library_2.11\\1.0.2_mc\\scala-continuations-library_2.11-1.0.2_mc.jar;..\\..\\libraries\\org\\scala-lang\\plugins\\scala-continuations-plugin_2.11.1\\1.0.2_mc\\scala-continuations-plugin_2.11.1-1.0.2_mc.jar;..\\..\\libraries\\org\\scala-lang\\scala-library\\2.11.1\\scala-library-2.11.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-parser-combinators_2.11\\1.0.1\\scala-parser-combinators_2.11-1.0.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-reflect\\2.11.1\\scala-reflect-2.11.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-swing_2.11\\1.0.1\\scala-swing_2.11-1.0.1.jar;..\\..\\libraries\\org\\scala-lang\\scala-xml_2.11\\1.0.2\\scala-xml_2.11-1.0.2.jar;..\\..\\libraries\\lzma\\lzma\\0.0.1\\lzma-0.0.1.jar;..\\..\\libraries\\java3d\\vecmath\\1.5.2\\vecmath-1.5.2.jar;..\\..\\libraries\\net\\sf\\trove4j\\trove4j\\3.0.3\\trove4j-3.0.3.jar;..\\..\\libraries\\org\\apache\\maven\\maven-artifact\\3.5.3\\maven-artifact-3.5.3.jar;..\\..\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\5.0.3\\jopt-simple-5.0.3.jar;..\\..\\libraries\\com\\mojang\\patchy\\1.3.9\\patchy-1.3.9.jar;..\\..\\libraries\\oshi-project\\oshi-core\\1.1\\oshi-core-1.1.jar;..\\..\\libraries\\net\\java\\dev\\jna\\jna\\4.4.0\\jna-4.4.0.jar;..\\..\\libraries\\net\\java\\dev\\jna\\platform\\3.4.0\\platform-3.4.0.jar;..\\..\\libraries\\com\\ibm\\icu\\icu4j-core-mojang\\51.2\\icu4j-core-mojang-51.2.jar;..\\..\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\5.0.3\\jopt-simple-5.0.3.jar;..\\..\\libraries\\com\\paulscode\\codecjorbis\\20101023\\codecjorbis-20101023.jar;..\\..\\libraries\\com\\paulscode\\codecwav\\20101023\\codecwav-20101023.jar;..\\..\\libraries\\com\\paulscode\\libraryjavasound\\20101123\\libraryjavasound-20101123.jar;..\\..\\libraries\\com\\paulscode\\librarylwjglopenal\\20100824\\librarylwjglopenal-20100824.jar;..\\..\\libraries\\com\\paulscode\\soundsystem\\20120107\\soundsystem-20120107.jar;..\\..\\libraries\\io\\netty\\netty-all\\4.1.9.Final\\netty-all-4.1.9.Final.jar;..\\..\\libraries\\com\\google\\guava\\guava\\21.0\\guava-21.0.jar;..\\..\\libraries\\org\\apache\\commons\\commons-lang3\\3.5\\commons-lang3-3.5.jar;..\\..\\libraries\\commons-io\\commons-io\\2.5\\commons-io-2.5.jar;..\\..\\libraries\\commons-codec\\commons-codec\\1.10\\commons-codec-1.10.jar;..\\..\\libraries\\net\\java\\jinput\\jinput\\2.0.5\\jinput-2.0.5.jar;..\\..\\libraries\\net\\java\\jutils\\jutils\\1.0.0\\jutils-1.0.0.jar;..\\..\\libraries\\com\\google\\code\\gson\\gson\\2.8.0\\gson-2.8.0.jar;..\\..\\libraries\\com\\mojang\\authlib\\1.5.25\\authlib-1.5.25.jar;..\\..\\libraries\\com\\mojang\\realms\\1.10.22\\realms-1.10.22.jar;..\\..\\libraries\\org\\apache\\commons\\commons-compress\\1.8.1\\commons-compress-1.8.1.jar;..\\..\\libraries\\org\\apache\\httpcomponents\\httpclient\\4.3.3\\httpclient-4.3.3.jar;..\\..\\libraries\\commons-logging\\commons-logging\\1.1.3\\commons-logging-1.1.3.jar;..\\..\\libraries\\org\\apache\\httpcomponents\\httpcore\\4.3.2\\httpcore-4.3.2.jar;..\\..\\libraries\\it\\unimi\\dsi\\fastutil\\7.1.0\\fastutil-7.1.0.jar;..\\..\\libraries\\org\\apache\\logging\\log4j\\log4j-api\\2.8.1\\log4j-api-2.8.1.jar;..\\..\\libraries\\org\\apache\\logging\\log4j\\log4j-core\\2.8.1\\log4j-core-2.8.1.jar;..\\..\\libraries\\org\\lwjgl\\lwjgl\\lwjgl\\2.9.4-nightly-20150209\\lwjgl-2.9.4-nightly-20150209.jar;..\\..\\libraries\\org\\lwjgl\\lwjgl\\lwjgl_util\\2.9.4-nightly-20150209\\lwjgl_util-2.9.4-nightly-20150209.jar;..\\..\\libraries\\com\\mojang\\text2speech\\1.10.3\\text2speech-1.10.3.jar\" ");
+    fprintf(fp, "net.minecraft.client.main.Main ");
+    fprintf(fp, "--username %s --version 1.12.2 --gameDir . --assetsDir assets --accessToken 0 --userProperties {} --uuid %s --userType legacy --width 1280 --height 720\n", username, username);
+}
+ else {
+            // Default command for other versions
+            fprintf(fp, "cd resources\\versions\\%s\n", version);
+            fprintf(fp, "java -Xms128M -Xmx512m -Djava.library.path=\"natives\" -cp \"%s.jar;../../libraries/*\" net.minecraft.client.main.Main ", version);
+            fprintf(fp, "--username %s --version %s --gameDir . --assetsDir assets ", username, version);
+            fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username, version, username);
+        }
+
         fclose(fp);
         system("run.bat");
         remove("run.bat");
+    } else {
+        LogError("Failed to create run.bat");
     }
 }
+
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch (uMsg) {
@@ -31,42 +84,37 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
             PostQuitMessage(0);
             return 0;
         case WM_COMMAND:
-            {
-                char szText[100];
-                GetWindowText(hTextbox, szText, sizeof(szText));
-                if ((HWND)lParam == hButton173) {
-                    CreateBatFile("beta1.7.3", szText);
-                } else if ((HWND)lParam == hButton10) {
-                    CreateBatFile("1.0", szText);
-                } else if ((HWND)lParam == hButton125) {
-                    CreateBatFile("1.2.5", szText);
-                } else if ((HWND)lParam == hButton147) {
-                    CreateBatFile("1.4.7", szText);
-                } else if ((HWND)lParam == hButton152) {
-                    CreateBatFile("1.5.2", szText);
-                } else if ((HWND)lParam == hButton112) {
-                    CreateBatFile("alpha1.1.2", szText);
-                } else if ((HWND)lParam == hButtonBetaHacks) {
-                    CreateBatFile("betahacks", szText);
-                }
+            if ((HWND)lParam == hButtonPlay) {
+                char version[100];
+                char username[100];
+
+                // Get the selected version from the dropdown
+                int index = SendMessage(hDropdownVersion, CB_GETCURSEL, 0, 0);
+                SendMessage(hDropdownVersion, CB_GETLBTEXT, index, (LPARAM)version);
+
+                // Get the username from the textbox
+                GetWindowText(hTextboxUsername, username, sizeof(username));
+
+                // Create and execute the batch file
+                CreateBatFile(version, username);
             }
             return 0;
         case WM_PAINT:
-            {
-                PAINTSTRUCT ps;
-                HDC hdc = BeginPaint(hwnd, &ps);
-                if (g_hBitmap) {
-                    HDC hdcImage = CreateCompatibleDC(hdc);
-                    HBITMAP hOldBitmap = (HBITMAP)SelectObject(hdcImage, g_hBitmap);
-                    BITMAP bm;
-                    GetObject(g_hBitmap, sizeof(bm), &bm);
-                    BitBlt(hdc, 0, 0, bm.bmWidth, bm.bmHeight, hdcImage, 0, 0, SRCCOPY);
-                    SelectObject(hdcImage, hOldBitmap);
-                    DeleteDC(hdcImage);
-                }
-                EndPaint(hwnd, &ps);
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hwnd, &ps);
+            if (g_hBitmap) {
+                HDC hdcImage = CreateCompatibleDC(hdc);
+                HBITMAP hOldBitmap = (HBITMAP)SelectObject(hdcImage, g_hBitmap);
+                BITMAP bm;
+                GetObject(g_hBitmap, sizeof(bm), &bm);
+                BitBlt(hdc, 0, 0, bm.bmWidth, bm.bmHeight, hdcImage, 0, 0, SRCCOPY);
+                SelectObject(hdcImage, hOldBitmap);
+                DeleteDC(hdcImage);
             }
-            return 0;
+            EndPaint(hwnd, &ps);
+        }
+        return 0;
         default:
             return DefWindowProc(hwnd, uMsg, wParam, lParam);
     }
@@ -76,6 +124,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     g_hBitmap = (HBITMAP)LoadImageA(NULL, "resources\\background.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
     if (!g_hBitmap) {
         MessageBoxA(NULL, "Failed to load background image!", "Error", MB_ICONEXCLAMATION | MB_OK);
+        LogError("Failed to load background image");
         return 0;
     }
     WNDCLASSA wc = { 0 };
@@ -84,35 +133,51 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     wc.lpszClassName = "MyWindowClass";
     if (!RegisterClassA(&wc)) {
         MessageBoxA(NULL, "Window Registration Failed!", "Error", MB_ICONEXCLAMATION | MB_OK);
+        LogError("Window Registration Failed");
         return 0;
     }
     HWND hwnd = CreateWindowA(
         "MyWindowClass",
-        "Win9x Minecraft Launcher A1.02",
+        "Win9x Minecraft Launcher A:1.2.1",
         WS_OVERLAPPEDWINDOW & ~(WS_THICKFRAME | WS_MAXIMIZEBOX),
-        CW_USEDEFAULT,
-        CW_USEDEFAULT,
-        540,
-        400,
-        NULL,
-        NULL,
-        hInstance,
-        NULL
+                              CW_USEDEFAULT,
+                              CW_USEDEFAULT,
+                              540,
+                              400,
+                              NULL,
+                              NULL,
+                              hInstance,
+                              NULL
     );
     if (hwnd == NULL) {
         MessageBoxA(NULL, "Window Creation Failed!", "Error", MB_ICONEXCLAMATION | MB_OK);
+        LogError("Window Creation Failed");
         return 0;
     }
-    hButton173 = CreateWindow("BUTTON", "Play B1.7.3", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 70, 100, 30, hwnd, NULL, hInstance, NULL);
-    hButton10 = CreateWindow("BUTTON", "Play 1.0", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 110, 100, 30, hwnd, NULL, hInstance, NULL);
-    hButton125 = CreateWindow("BUTTON", "Play 1.2.5", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 150, 100, 30, hwnd, NULL, hInstance, NULL);
-    hButton147 = CreateWindow("BUTTON", "Play 1.4.7", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 190, 100, 30, hwnd, NULL, hInstance, NULL);
-    hButton152 = CreateWindow("BUTTON", "Play 1.5.2", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 230, 100, 30, hwnd, NULL, hInstance, NULL);
-    hButton112 = CreateWindow("BUTTON", "Play A1.1.2", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 270, 100, 30, hwnd, NULL, hInstance, NULL);
-    hButtonBetaHacks = CreateWindow("BUTTON", "Play B-Hacks", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 310, 100, 30, hwnd, NULL, hInstance, NULL);
-    hTextbox = CreateWindow("EDIT", "Type username here", WS_TABSTOP | WS_VISIBLE | WS_CHILD | WS_BORDER, 120, 70, 400, 30, hwnd, NULL, hInstance, NULL);
-    hLabel = CreateWindow("STATIC", "Win9x Mincraft Launcher Release: A1.02                               This is very early and of course very simple software. There are currently only 7 versions of minecraft included. You can of course replace minecraft.jar with any jar you want. before playing you must install java and kernelx. I reccomend Java 5 update 1 for best performence on windows 98. This launcher is not intended to be used on modern versions of windows. sound will not work there are far better options such as Betacraft.That said when ready simply type your user name into the top box, and play your selected version", WS_VISIBLE | WS_CHILD | SS_LEFT, 120, 110, 400, 230, hwnd, NULL, hInstance, NULL);
-    ReadInfoFile();
+
+    // Create UI elements
+    hLabelInfo = CreateWindow("STATIC", "Version A:1.2.2 Release Notes In this update I have made the Minecraft 9x Launcher more user friendly with a redesigned interface that includes a dropdown menu for selecting versions a central Play button and a username field at the bottom right The libraries folder is now in the main resources directory simplifying file management This update fully supports Minecraft 1.6.4 to 1.8.9. It should be relativly easy to get 1.12.2 working but I am having issues with pulse audio. If anyone wishes to help with the project feel free to contact me on discord jtofexstinction ENJOY!", WS_VISIBLE | WS_CHILD , 95, 100, 350, 200, hwnd, NULL, hInstance, NULL);
+
+    hDropdownVersion = CreateWindow("COMBOBOX", "Version", CBS_DROPDOWNLIST | WS_VISIBLE | WS_CHILD | WS_VSCROLL, 0, 345, 150, 200, hwnd, NULL, hInstance, NULL);
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.6.4");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.7.10");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.8.9");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.5.2");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.4.7");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.2.5");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.0");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"beta1.7.3");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"alpha1.1.2");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"betahacks");
+    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.12.2forge"); // Added 1.12.2 Forge
+
+    // Set default selection to beta1.7.3
+    SendMessage(hDropdownVersion, CB_SETCURSEL, 8, 0);
+
+    hButtonPlay = CreateWindow("BUTTON", "Play", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 220, 345, 100, 30, hwnd, NULL, hInstance, NULL);
+
+    hTextboxUsername = CreateWindow("EDIT", "Type username here", WS_TABSTOP | WS_VISIBLE | WS_CHILD | WS_BORDER, 390, 345, 150, 30, hwnd, NULL, hInstance, NULL);
+
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
     MSG msg = { 0 };

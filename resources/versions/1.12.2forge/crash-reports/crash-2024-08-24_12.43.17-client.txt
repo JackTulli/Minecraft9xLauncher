@@ -1,0 +1,61 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 8/24/24 12:43 PM
+Description: Initializing game
+
+java.lang.NoClassDefFoundError: paulscode/sound/libraries/LibraryLWJGLOpenAL
+	at chm.<init>(SourceFile:82)
+	at cho.<init>(SourceFile:71)
+	at bib.aq(SourceFile:485)
+	at bib.a(SourceFile:404)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+Caused by: java.lang.ClassNotFoundException: paulscode.sound.libraries.LibraryLWJGLOpenAL
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 5 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at chm.<init>(SourceFile:82)
+	at cho.<init>(SourceFile:71)
+	at bib.aq(SourceFile:485)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at bib.a(SourceFile:404)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 428835728 bytes (408 MB) / 519110656 bytes (495 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 2 total; -Xms512M -Xmx1G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: 1.12.2
+	LWJGL: 2.9.1
+	OpenGL: NVIDIA GeForce GTX 960/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.70, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Probably not. Jar signature remains and client brand is untouched.
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

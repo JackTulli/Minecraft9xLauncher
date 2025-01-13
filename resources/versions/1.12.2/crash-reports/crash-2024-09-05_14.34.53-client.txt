@@ -1,0 +1,127 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 9/5/24 2:34 PM
+Description: Initializing game
+
+java.lang.OutOfMemoryError: Initializing game
+	at java.util.zip.Inflater.inflateBytes(Native Method)
+	at java.util.zip.Inflater.inflate(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at java.util.jar.JarVerifier$VerifierStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at com.google.gson.stream.JsonReader.fillBuffer(JsonReader.java:1287)
+	at com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1325)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:549)
+	at com.google.gson.stream.JsonReader.peek(JsonReader.java:425)
+	at com.google.gson.internal.Streams.parse(Streams.java:46)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:65)
+	at net.minecraft.util.JsonUtils.func_188173_a(SourceFile:492)
+	at net.minecraft.client.renderer.block.model.ModelBlock.func_178307_a(SourceFile:61)
+	at net.minecraft.client.renderer.block.model.ModelBakery.func_177594_c(ModelBakery.java:338)
+	at net.minecraftforge.client.model.ModelLoader.access$1400(ModelLoader.java:115)
+	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157)
+	at net.minecraftforge.client.model.ModelLoader.func_177590_d(ModelLoader.java:302)
+	at net.minecraft.client.renderer.block.model.ModelBakery.func_177577_b(ModelBakery.java:175)
+	at net.minecraftforge.client.model.ModelLoader.func_177570_a(ModelLoader.java:151)
+	at net.minecraft.client.renderer.block.model.ModelManager.func_110549_a(ModelManager.java:28)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.func_110542_a(SimpleReloadableResourceManager.java:121)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:513)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:378)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at java.util.zip.Inflater.inflateBytes(Native Method)
+	at java.util.zip.Inflater.inflate(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at java.util.jar.JarVerifier$VerifierStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at com.google.gson.stream.JsonReader.fillBuffer(JsonReader.java:1287)
+	at com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1325)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:549)
+	at com.google.gson.stream.JsonReader.peek(JsonReader.java:425)
+	at com.google.gson.internal.Streams.parse(Streams.java:46)
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:65)
+	at net.minecraft.util.JsonUtils.func_188173_a(SourceFile:492)
+	at net.minecraft.client.renderer.block.model.ModelBlock.func_178307_a(SourceFile:61)
+	at net.minecraft.client.renderer.block.model.ModelBakery.func_177594_c(ModelBakery.java:338)
+	at net.minecraftforge.client.model.ModelLoader.access$1400(ModelLoader.java:115)
+	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157)
+	at net.minecraftforge.client.model.ModelLoader.func_177590_d(ModelLoader.java:302)
+	at net.minecraft.client.renderer.block.model.ModelBakery.func_177577_b(ModelBakery.java:175)
+	at net.minecraftforge.client.model.ModelLoader.func_177570_a(ModelLoader.java:151)
+	at net.minecraft.client.renderer.block.model.ModelManager.func_110549_a(ModelManager.java:28)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.func_110542_a(SimpleReloadableResourceManager.java:121)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:513)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:378)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 342441640 bytes (326 MB) / 650149888 bytes (620 MB) up to 1439498240 bytes (1372 MB)
+	JVM Flags: 6 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1424m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn512m
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2855 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID        | Version      | Source                        | Signature                                |
+	|:----- |:--------- |:------------ |:----------------------------- |:---------------------------------------- |
+	| LCH   | minecraft | 1.12.2       | minecraft.jar                 | None                                     |
+	| LCH   | mcp       | 9.42         | minecraft.jar                 | None                                     |
+	| LCH   | FML       | 8.0.99.99    | forge-1.12.2-14.23.5.2855.jar | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCH   | forge     | 14.23.5.2855 | forge-1.12.2-14.23.5.2855.jar | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 560.94' Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 12x AMD Ryzen 5 1600 Six-Core Processor 

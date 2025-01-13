@@ -1,0 +1,4 @@
+C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\resources\versions\1.8.9 - Copy>java -Xms512M -Xmx1G -Djava.library.path="natives" -cp "1.12.2.jar;../../libraries/commons-lang3-3.3.2.jar;../../libraries/netty-all-4.1.9.Final.jar;../../libraries/*" net.minecraft.client.main.Main --username TypeUsernameHere --version 1.12.2 --gameDir . --assetsDir assets --accessToken 0 --userProperties {} --uuid TypeUsernameHere --userType legacy
+Exception in thread "Client thread" java.lang.NoSuchMethodError: org.apache.logging.log4j.Logger.info(Ljava/lang/String;Ljava/lang/Object;)V
+        at bib.<init>(SourceFile:370)
+        at net.minecraft.client.main.Main.main(SourceFile:123)

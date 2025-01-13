@@ -1,0 +1,59 @@
+Started at: 2024-09-05T16:53:01.601
+#############
+#
+# Loading
+#
+#############
+
+# Found pack: .\mods\BuildCraft-Mod-1.12.2.jar
+
+Found script: buildcrafttransport/compat/buildcraft/guide.txt
+
+Found script: buildcraftsilicon/compat/buildcraft/guide.txt
+
+Found script: buildcraftlib/compat/buildcraft/guide.txt
+
+Found script: buildcraftfactory/compat/buildcraft/guide.txt
+
+Found script: buildcraftenergy/compat/buildcraft/guide.txt
+
+Found script: buildcraftcore/compat/buildcraft/guide.txt
+
+#############
+#
+# Executing
+#
+#############
+
+Adding buildcraftfactory:block/flood_gate as ItemStackValueFilter: 1xtile.floodGateBlock@0
+Adding buildcraftcore:item/volume_box as ItemStackValueFilter: 1xitem.volume_box@0
+Adding buildcraftcore:item/gear_stone as ItemStackValueFilter: 1xitem.stoneGearItem@0
+Adding buildcraftcore:item/list as ItemStackValueFilter: 1xitem.list@0
+Adding buildcraftfactory:block/heat_exchange as ItemStackValueFilter: 1xtile.heat_exchange@0
+Adding buildcraftfactory:block/chute as ItemStackValueFilter: 1xtile.chuteBlock@0
+Adding buildcraftenergy:block/engine_iron as ItemStackValueFilter: Matching meta of 1xtile.engineBlock@2
+Adding buildcraftcore:item/gear_iron as ItemStackValueFilter: 1xitem.ironGearItem@0
+Adding buildcrafttransport:pipe/wood_item as ItemStackValueFilter: 1xitem.PipeItemsWood@0
+Adding buildcraftenergy:block/engine_stone as ItemStackValueFilter: Matching meta of 1xtile.engineBlock@1
+Adding buildcraftcore:trigger/always_on as TriggerTrue: buildcraft.core.statements.TriggerTrue@16b2642
+Adding buildcraftfactory:block/distiller as ItemStackValueFilter: 1xtile.distiller@0
+Adding buildcraftsilicon:item/plug_facade as ItemStackValueFilter: 1xitem.Facade@0
+Adding buildcraftlib:config/guide_page_format as String: Guide Page File Format§r
+Adding buildcrafttransport:item/plug_power_adaptor as ItemStackValueFilter: 1xitem.PipePowerAdapter@0
+Adding buildcraftcore:item/wrench as ItemStackValueFilter: 1xitem.wrenchItem@0
+Adding buildcraftcore:item/gear_diamond as ItemStackValueFilter: 1xitem.diamondGearItem@0
+Adding buildcraftcore:item/gear_gold as ItemStackValueFilter: 1xitem.goldGearItem@0
+Adding buildcraftfactory:block/tank as ItemStackValueFilter: 1xtile.tankBlock@0
+Adding buildcraftfactory:block/pump as ItemStackValueFilter: 1xtile.pumpBlock@0
+Adding buildcraftlib:config/json_insn_format as String: Json Instruction File Format§r
+Adding buildcraftfactory:block/mining_well as ItemStackValueFilter: 1xtile.miningWellBlock@0
+Adding buildcraftcore:item/marker_path as ItemStackValueFilter: 1xtile.pathMarkerBlock@0
+Adding buildcraftcore:item/gear_wood as ItemStackValueFilter: 1xitem.woodenGearItem@0
+Adding buildcraftcore:item/marker_volume as ItemStackValueFilter: 1xtile.markerBlock@0
+Adding buildcraftcore:item/paintbrush as ItemStackValueFilter: 1xitem.paintbrush@0
+Adding buildcraftlib:config/registry_overview as String: Json Registry Overview§r
+Adding buildcraftfactory:block/autoworkbench_item as ItemStackValueFilter: 1xtile.autoWorkbenchBlock@0
+Adding buildcraftcore:item/marker_connector as ItemStackValueFilter: 1xitem.markerConnector@0
+Adding buildcraftcore:block/engine_wood as ItemStackValueFilter: Matching meta of 1xtile.engineBlock@0
+Adding buildcraftcore:block/engine_creative as ItemStackValueFilter: Matching meta of 1xtile.engineBlock@1
+Finished at: 2024-09-05T16:53:01.687, took 86ms

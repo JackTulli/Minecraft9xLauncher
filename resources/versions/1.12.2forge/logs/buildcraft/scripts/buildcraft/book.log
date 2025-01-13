@@ -1,0 +1,22 @@
+Started at: 2024-09-05T16:53:01.527
+#############
+#
+# Loading
+#
+#############
+
+# Found pack: .\mods\BuildCraft-Mod-1.12.2.jar
+
+Found script: buildcraftlib/compat/buildcraft/book.txt
+
+Found script: buildcraftcore/compat/buildcraft/book.txt
+
+#############
+#
+# Executing
+#
+#############
+
+Adding buildcraftlib:meta as GuideBook [ buildcraftlib:meta, title = TranslatableComponent{key='buildcraft.guide.book.meta.name', args=[], siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}} ]
+Adding buildcraftcore:main as GuideBook [ buildcraftcore:main, title = TranslatableComponent{key='item.buildcraft.guide.name', args=[], siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}} ]
+Finished at: 2024-09-05T16:53:01.6, took 73ms

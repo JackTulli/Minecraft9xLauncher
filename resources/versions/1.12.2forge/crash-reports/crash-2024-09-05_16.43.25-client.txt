@@ -1,0 +1,83 @@
+---- Minecraft Crash Report ----
+// Hey, that tickles! Hehehe!
+
+Time: 9/5/24 4:43 PM
+Description: Initializing game
+
+java.lang.OutOfMemoryError: Initializing game
+	at sun.misc.Unsafe.allocateMemory(Native Method)
+	at java.nio.DirectByteBuffer.<init>(Unknown Source)
+	at java.nio.ByteBuffer.allocateDirect(Unknown Source)
+	at net.minecraft.client.renderer.GLAllocation.func_74524_c(SourceFile:41)
+	at net.minecraft.client.renderer.GLAllocation.func_74527_f(SourceFile:53)
+	at net.minecraft.client.renderer.texture.TextureUtil.<clinit>(TextureUtil.java:25)
+	at net.minecraft.client.shader.Framebuffer.func_147605_b(Framebuffer.java:105)
+	at net.minecraft.client.shader.Framebuffer.func_147613_a(Framebuffer.java:57)
+	at net.minecraft.client.shader.Framebuffer.<init>(Framebuffer.java:38)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:460)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:378)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at sun.misc.Unsafe.allocateMemory(Native Method)
+	at java.nio.DirectByteBuffer.<init>(Unknown Source)
+	at java.nio.ByteBuffer.allocateDirect(Unknown Source)
+	at net.minecraft.client.renderer.GLAllocation.func_74524_c(SourceFile:41)
+	at net.minecraft.client.renderer.GLAllocation.func_74527_f(SourceFile:53)
+	at net.minecraft.client.renderer.texture.TextureUtil.<clinit>(TextureUtil.java:25)
+	at net.minecraft.client.shader.Framebuffer.func_147605_b(Framebuffer.java:105)
+	at net.minecraft.client.shader.Framebuffer.func_147613_a(Framebuffer.java:57)
+	at net.minecraft.client.shader.Framebuffer.<init>(Framebuffer.java:38)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:460)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:378)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 84791768 bytes (80 MB) / 187695104 bytes (179 MB) up to 1579614208 bytes (1506 MB)
+	JVM Flags: 6 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1512m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn56m
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	Loaded coremods (and transformers): 
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 12x AMD Ryzen 5 1600 Six-Core Processor 

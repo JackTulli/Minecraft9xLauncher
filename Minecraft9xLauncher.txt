@@ -1,0 +1,15 @@
+cd C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main
+wmake -f C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\Minecraft9xLauncher.mk -h -e C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\Minecraft9xLauncher.exe
+wpp386 launcher.cpp -i="C:\WATCOM/h;C:\WATCOM/h/nt" -w4 -e25 -zq -od -d2 -6r -bt=nt -fo=.obj -mf -xs -xr
+launcher.cpp(74): Error! E473: col(26) function argument(s) do not match those in prototype
+launcher.cpp(74): Note! N392: col(26) definition: 'int stdcall (__declspec(dllimport) CreateProcessA)( char const *, char *, _SECURITY_ATTRIBUTES *, _SECURITY_ATTRIBUTES *, int, unsigned long, void *, char const *, _STARTUPINFOA *, _PROCESS_INFORMATION * )'
+launcher.cpp(74): Note! N643: col(26) cannot convert argument 2 defined in: launcher.cpp(74) (col 33)
+launcher.cpp(74): Note! N630: col(26) source conversion type is 'char const * (lvalue)'
+launcher.cpp(74): Note! N631: col(26) target conversion type is 'char *'
+launcher.cpp(189): Warning! W726: col(1) no reference to formal parameter 'hPrevInstance'
+launcher.cpp(141): Note! N392: col(51) definition: 'HINSTANCE__ * hPrevInstance' in 'int stdcall WinMain( HINSTANCE__ *, HINSTANCE__ *, char *, int )'
+launcher.cpp(189): Warning! W726: col(1) no reference to formal parameter 'lpCmdLine'
+launcher.cpp(141): Note! N392: col(72) definition: 'char * lpCmdLine' in 'int stdcall WinMain( HINSTANCE__ *, HINSTANCE__ *, char *, int )'
+Error(E42): Last command making (C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\launcher.obj) returned a bad status
+Error(E02): Make execution terminated
+Execution complete

@@ -1,0 +1,179 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  MicdoodlePlugin (MicdoodleCore-1.12.2.jar)
+  SteveKunGLibPlugin (SteveKunGs-Lib-1_12_2.jar)
+  MekanismCoremod (Mekanism-1.12.2-9.8.3.390.jar)
+  IvToolkit (IvToolkit-1.3.3-1.12.jar)
+Contact their authors BEFORE contacting forge
+
+// Uh... Did I do that?
+
+Time: 9/5/24 4:55 PM
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at net.minecraft.world.World.getSkyColorBody(World.java:1487)
+	at net.minecraft.world.WorldProvider.getSkyColor(WorldProvider.java:463)
+	at net.minecraft.world.World.func_72833_a(World.java:1478)
+	at net.minecraft.client.renderer.EntityRenderer.func_78466_h(EntityRenderer.java:2293)
+	at net.minecraft.client.renderer.EntityRenderer.func_175068_a(EntityRenderer.java:1646)
+	at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1621)
+	at net.minecraft.client.renderer.EntityRenderer.func_181560_a(EntityRenderer.java:1390)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.world.World.getSkyColorBody(World.java:1487)
+	at net.minecraft.world.WorldProvider.getSkyColor(WorldProvider.java:463)
+	at net.minecraft.world.World.func_72833_a(World.java:1478)
+	at net.minecraft.client.renderer.EntityRenderer.func_78466_h(EntityRenderer.java:2293)
+	at net.minecraft.client.renderer.EntityRenderer.func_175068_a(EntityRenderer.java:1646)
+	at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1621)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 0 total; []
+	Chunk stats: MultiplayerChunkCache: 0, 0
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (8,64,8), Chunk: (at 8,4,8 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 4796 game time, 4796 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 0 total; []
+	Retry entities: 0 total; []
+	Server brand: ~~ERROR~~ NullPointerException: null
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:532)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2741)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:427)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 150813944 bytes (143 MB) / 1021771776 bytes (974 MB) up to 1021771776 bytes (974 MB)
+	JVM Flags: 6 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx999m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn256m
+	IntCache: cache: 1, tcache: 0, allocated: 21, tallocated: 86
+	FML: MCP 9.42 Powered by Forge 14.23.5.2855 Optifine OptiFine_1.12.2_HD_U_G5 34 mods loaded, 34 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                   | Version           | Source                                    | Signature                                |
+	|:------ |:-------------------- |:----------------- |:----------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft            | 1.12.2            | minecraft.jar                             | None                                     |
+	| LCHIJA | mcp                  | 9.42              | minecraft.jar                             | None                                     |
+	| LCHIJA | FML                  | 8.0.99.99         | forge-1.12.2-14.23.5.2855.jar             | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge                | 14.23.5.2855      | forge-1.12.2-14.23.5.2855.jar             | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | ivtoolkit            | 1.3.3-1.12        | minecraft.jar                             | None                                     |
+	| LCHIJA | micdoodlecore        |                   | minecraft.jar                             | None                                     |
+	| LCHIJA | libnine              | 1.2.1             | libnine-1.12.2-1.2.1.jar                  | None                                     |
+	| LCHIJA | buildcraftlib        | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcraftcore       | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | jei                  | 4.16.1.302        | jei_1.12.2-4.16.1.302.jar                 | None                                     |
+	| LCHIJA | mekanism             | 1.12.2-9.8.3.390  | Mekanism-1.12.2-9.8.3.390.jar             | None                                     |
+	| LCHIJA | mekanismgenerators   | 1.12.2-9.8.3.390  | MekanismGenerators-1.12.2-9.8.3.390.jar   | None                                     |
+	| LCHIJA | algane               | 1.0.2             | algane-1.12.2-1.0.2.jar                   | None                                     |
+	| LCHIJA | mantle               | 1.12-1.3.3.55     | Mantle-1.12-1.3.3.55.jar                  | None                                     |
+	| LCHIJA | tconstruct           | 1.12.2-2.12.0.115 | Tinkers-Construct-Mod-1.12.2.jar          | None                                     |
+	| LCHIJA | galacticraftcore     | 4.0.2.280         | GalacticraftCore-1.12.2-4.0.2.280.jar     | None                                     |
+	| LCHIJA | galacticraftplanets  | 4.0.2.280         | Galacticraft-Planets-1.12.2-4.0.2.280.jar | None                                     |
+	| LCHIJA | asmodeuscore         | 0.0.30            | AsmodeusCore-1.12.2-0.0.31.jar            | None                                     |
+	| LCHIJA | buildcraftbuilders   | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcrafttransport  | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcraftsilicon    | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcraftcompat     | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcraftenergy     | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcraftfactory    | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | buildcraftrobotics   | 7.99.24.1         | BuildCraft-Mod-1.12.2.jar                 | None                                     |
+	| LCHIJA | classiccombat        | 1.0.1             | ClassicCombat-1.0.1.jar                   | None                                     |
+	| LCHIJA | hungerstrike         | 1.12-1.0.8        | HungerStrike-1.12-1.0.8.jar               | None                                     |
+	| LCHIJA | inventorypets        | 2.0.13            | inventorypets-1.12-2.0.13.jar             | None                                     |
+	| LCHIJA | mjrlegendslib        | 1.12.2-1.2.1      | MJRLegendsLib-1.12.2-1.2.1.jar            | b02331787272ec3515ebe63ecdeea0d746653468 |
+	| LCHIJA | nether_update_rewind | 1.1.0             | NetherUpdate+Rewind(1).jar                | None                                     |
+	| LCHIJA | reccomplex           | 1.4.8.4           | RecurrentComplex-1.4.8.4.jar              | None                                     |
+	| LCHIJA | spaceambient         | 0.0.1             | SpaceAmbient-1.12.2-0.0.1(1).jar          | None                                     |
+	| LCHIJA | stevekung's_lib      | 1.1.9             | SteveKunGs-Lib-1_12_2.jar                 | None                                     |
+	| LCHIJA | wawla                | 2.6.275           | Wawla-1.12.2-2.6.275(1).jar               | d476d1b22b218a10d845928d1665d45fce301b27 |
+
+	Loaded coremods (and transformers): 
+MicdoodlePlugin (MicdoodleCore-1.12.2.jar)
+  micdoodle8.mods.miccore.MicdoodleTransformer
+SteveKunGLibPlugin (SteveKunGs-Lib-1_12_2.jar)
+  
+MekanismCoremod (Mekanism-1.12.2-9.8.3.390.jar)
+  mekanism.coremod.KeybindingMigrationHelper
+IvToolkit (IvToolkit-1.3.3-1.12.jar)
+  
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 560.94' Renderer: 'NVIDIA GeForce RTX 3050/PCIe/SSE2'
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 12x AMD Ryzen 5 1600 Six-Core Processor 
+	OptiFine Version: OptiFine_1.12.2_HD_U_G5
+	OptiFine Build: 20210124-142939
+	Render Distance Chunks: 2
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 560.94
+	OpenGlRenderer: NVIDIA GeForce RTX 3050/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 12

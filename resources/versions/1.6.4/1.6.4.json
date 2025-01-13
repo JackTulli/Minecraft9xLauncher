@@ -1,0 +1,188 @@
+{
+  "id": "1.6.4-Forge9.11.1.1345",
+  "time": "2015-03-29T01:53:49+00:00",
+  "releaseTime": "1960-01-01T07:00:00+00:00",
+  "type": "release",
+  "minecraftArguments": "--username ${auth_player_name} --session ${auth_session} --version ${version_name} --gameDir ${game_directory} --assetsDir ${game_assets} --tweakClass cpw.mods.fml.common.launcher.FMLTweaker",
+  "libraries": [
+    {
+      "name": "net.minecraftforge:minecraftforge:9.11.1.1345",
+      "url": "https://maven.minecraftforge.net/"
+    },
+    {
+      "name": "net.minecraft:launchwrapper:1.8"
+    },
+    {
+      "name": "org.ow2.asm:asm-all:4.1"
+    },
+    {
+      "name": "org.scala-lang:scala-library:2.10.2",
+      "url": "https://maven.minecraftforge.net/"
+    },
+    {
+      "name": "org.scala-lang:scala-compiler:2.10.2",
+      "url": "https://maven.minecraftforge.net/"
+    },
+    {
+      "name": "lzma:lzma:0.0.1"
+    },
+    {
+      "name": "net.sf.jopt-simple:jopt-simple:4.5"
+    },
+    {
+      "name": "com.paulscode:codecjorbis:20101023"
+    },
+    {
+      "name": "com.paulscode:codecwav:20101023"
+    },
+    {
+      "name": "com.paulscode:libraryjavasound:20101123"
+    },
+    {
+      "name": "com.paulscode:librarylwjglopenal:20100824"
+    },
+    {
+      "name": "com.paulscode:soundsystem:20120107"
+    },
+    {
+      "name": "argo:argo:2.25_fixed"
+    },
+    {
+      "name": "org.bouncycastle:bcprov-jdk15on:1.47"
+    },
+    {
+      "name": "com.google.guava:guava:14.0"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3:3.1"
+    },
+    {
+      "name": "commons-io:commons-io:2.4"
+    },
+    {
+      "name": "net.java.jinput:jinput:2.0.5"
+    },
+    {
+      "name": "net.java.jutils:jutils:1.0.0"
+    },
+    {
+      "name": "com.google.code.gson:gson:2.2.2"
+    },
+    {
+      "name": "org.lwjgl.lwjgl:lwjgl:2.9.0",
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "osx",
+            "version": "^10\\.5\\.\\d$"
+          }
+        }
+      ]
+    },
+    {
+      "name": "org.lwjgl.lwjgl:lwjgl_util:2.9.0",
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "osx",
+            "version": "^10\\.5\\.\\d$"
+          }
+        }
+      ]
+    },
+    {
+      "name": "org.lwjgl.lwjgl:lwjgl-platform:2.9.0",
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "osx",
+            "version": "^10\\.5\\.\\d$"
+          }
+        }
+      ],
+      "natives": {
+        "windows": "natives-windows",
+        "osx": "natives-osx",
+        "linux": "natives-linux"
+      },
+      "extract": {
+        "exclude": [
+          "META-INF/"
+        ]
+      }
+    },
+    {
+      "name": "org.lwjgl.lwjgl:lwjgl:2.9.1-nightly-20130708-debug3",
+      "rules": [
+        {
+          "action": "allow",
+          "os": {
+            "name": "osx",
+            "version": "^10\\.5\\.\\d$"
+          }
+        }
+      ]
+    },
+    {
+      "name": "org.lwjgl.lwjgl:lwjgl_util:2.9.1-nightly-20130708-debug3",
+      "rules": [
+        {
+          "action": "allow",
+          "os": {
+            "name": "osx",
+            "version": "^10\\.5\\.\\d$"
+          }
+        }
+      ]
+    },
+    {
+      "name": "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-nightly-20130708-debug3",
+      "rules": [
+        {
+          "action": "allow",
+          "os": {
+            "name": "osx",
+            "version": "^10\\.5\\.\\d$"
+          }
+        }
+      ],
+      "natives": {
+        "windows": "natives-windows",
+        "osx": "natives-osx",
+        "linux": "natives-linux"
+      },
+      "extract": {
+        "exclude": [
+          "META-INF/"
+        ]
+      }
+    },
+    {
+      "name": "net.java.jinput:jinput-platform:2.0.5",
+      "natives": {
+        "windows": "natives-windows",
+        "osx": "natives-osx",
+        "linux": "natives-linux"
+      },
+      "extract": {
+        "exclude": [
+          "META-INF/"
+        ]
+      }
+    }
+  ],
+  "mainClass": "net.minecraft.launchwrapper.Launch",
+  "minimumLauncherVersion": 4
+}

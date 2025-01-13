@@ -1,15 +1,19 @@
 !define BLANK ""
-C:\Users\Jack\Desktop\laucnher\launcher.obj : C:\Users\Jack\Desktop\laucnher&
-\launcher.cpp .AUTODEPEND
+C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\&
+launcher.obj : C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9&
+xLauncher-main\launcher.cpp .AUTODEPEND
  @C:
- cd C:\Users\Jack\Desktop\laucnher
+ cd C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-m&
+ain
  *wpp386 launcher.cpp -i="C:\WATCOM/h;C:\WATCOM/h/nt" -w4 -e25 -zq -od -d2 -&
 6r -bt=nt -fo=.obj -mf -xs -xr
 
-C:\Users\Jack\Desktop\laucnher\Minecraft9xLauncher.exe : C:\Users\Jack\Deskt&
-op\laucnher\launcher.obj .AUTODEPEND
+C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\&
+Minecraft9xLauncher.exe : C:\Users\Admin\Documents\Minecraft9xLauncher-main1&
+\Minecraft9xLauncher-main\launcher.obj .AUTODEPEND
  @C:
- cd C:\Users\Jack\Desktop\laucnher
+ cd C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-m&
+ain
  @%write Minecraft9xLauncher.lk1 FIL launcher.obj
  @%append Minecraft9xLauncher.lk1 
 !ifneq BLANK ""

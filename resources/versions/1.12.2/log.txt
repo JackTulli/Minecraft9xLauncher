@@ -1,0 +1,4 @@
+C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\resources\versions\1.8.9 - Copy>java -Xms512M -Xmx1G -Djava.library.path="natives" -Dfml.ignorePatchDiscrepancies=true -Dforge.forceNoSound=true -cp "forge-1.12.2-14.23.5.2860.jar;libraries/*" net.minecraft.client.main.Main --username YourUsername --version 1.12.2 --gameDir . --assetsDir assets --accessToken 0 --userProperties {} --uuid YourUUID --userType legacy
+Error: Could not find or load main class net.minecraft.client.main.Main
+
+C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\resources\versions\1.8.9 - Copy>

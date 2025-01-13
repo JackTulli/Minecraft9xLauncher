@@ -1,0 +1,77 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 9/5/24 4:33 PM
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at amu.a(SourceFile:1173)
+	at buq.h(SourceFile:1614)
+	at buq.a(SourceFile:1203)
+	at buq.b(SourceFile:1188)
+	at buq.a(SourceFile:1033)
+	at bib.az(SourceFile:1023)
+	at bib.a(SourceFile:419)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at amu.a(SourceFile:1173)
+	at buq.h(SourceFile:1614)
+	at buq.a(SourceFile:1203)
+	at buq.b(SourceFile:1188)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 0 total; []
+	Chunk stats: MultiplayerChunkCache: 0, 0
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (8,64,8), Chunk: (at 8,4,8 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 0 game time, 0 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 0 total; []
+	Retry entities: 0 total; []
+	Server brand: ~~ERROR~~ NullPointerException: null
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at bsb.a(SourceFile:366)
+	at bib.b(SourceFile:2587)
+	at bib.a(SourceFile:433)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 285146000 bytes (271 MB) / 584437760 bytes (557 MB) up to 1204617216 bytes (1148 MB)
+	JVM Flags: 6 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1200m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn512m
+	IntCache: cache: 0, tcache: 0, allocated: 20, tallocated: 86
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Probably not. Jar signature remains and client brand is untouched.
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 12x AMD Ryzen 5 1600 Six-Core Processor 
