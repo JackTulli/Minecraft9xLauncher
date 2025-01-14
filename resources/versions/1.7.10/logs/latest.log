@@ -1,9 +1,8 @@
-[16:08:00] [main/INFO]: Setting user: Type
-[16:08:00] [main/INFO]: (Session ID is token:0:Type)
-[16:08:00] [Client thread/INFO]: LWJGL Version: 2.9.0
-[16:08:00] [Client thread/ERROR]: Couldn't initialize twitch stream
-[16:08:00] [Client thread/INFO]: Reloading ResourceManager: Default
-[16:08:01] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[16:08:01] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[16:08:01] [Sound Library Loader/INFO]: Sound engine started
-[16:08:02] [Client thread/INFO]: Stopping!
+[16:05:28] [main/INFO]: Setting user: Type
+[16:05:28] [main/INFO]: (Session ID is token:0:Type)
+[16:05:28] [Client thread/INFO]: LWJGL Version: 2.9.0
+[16:05:28] [Client thread/ERROR]: Couldn't initialize twitch stream
+[16:05:28] [Client thread/INFO]: Reloading ResourceManager: Default
+[16:05:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:05:29] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[16:05:29] [Sound Library Loader/INFO]: Sound engine started

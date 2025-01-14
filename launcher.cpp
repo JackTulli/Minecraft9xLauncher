@@ -37,11 +37,11 @@ void CreateBatFile(const char *version, const char *username) {
 
         } else if (strcmp(version, "1.6.4") == 0 || strcmp(version, "1.7.10") == 0) {
             // Command for launching Minecraft 1.6.4 and 1.7.10
-fprintf(fp, "cd resources\\versions\\%s\n", version);
-fprintf(fp, "java -Xms512M -Xmx1024M -Djava.library.path=\"natives\" ");
-fprintf(fp, "-cp \"%s.jar;..\\..\\libraries\\org\\lwjgl\\lwjgl\\2.9.0\\lwjgl.jar;..\\..\\libraries\\org\\lwjgl\\lwjgl_util\\2.9.0\\lwjgl_util.jar;..\\..\\libraries\\*\" net.minecraft.client.Minecraft ", version);
-fprintf(fp, "--username %s --version %s --gameDir . --assetsDir assets ", username, version);
-fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username);
+		fprintf(fp, "cd resources/versions/%s\n", version);
+		fprintf(fp, "java -Xms64M -Xmx1G -Djava.library.path=\"natives\" ");
+		fprintf(fp, "-cp \"%s.jar;../../libraries/*\" net.minecraft.client.main.Main ", version);
+		fprintf(fp, "--username %s --version %s --gameDir . --assetsDir assets ", username, version);
+		fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username);
 
 
         } else  if (strcmp(version, "1.12.2forge") == 0) {
@@ -162,18 +162,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     hLabelInfo = CreateWindow("STATIC", "Version A:1.2.2 Release Notes In this update I have made the Minecraft 9x Launcher more user friendly with a redesigned interface that includes a dropdown menu for selecting versions a central Play button and a username field at the bottom right The libraries folder is now in the main resources directory simplifying file management This update fully supports Minecraft 1.6.4 to 1.12.2. If anyone wishes to help with the project feel free to contact me on discord jtofexstinction ENJOY!", WS_VISIBLE | WS_CHILD , 95, 100, 350, 200, hwnd, NULL, hInstance, NULL);
 
     hDropdownVersion = CreateWindow("COMBOBOX", "Version", CBS_DROPDOWNLIST | WS_VISIBLE | WS_CHILD | WS_VSCROLL, 0, 345, 150, 200, hwnd, NULL, hInstance, NULL);
-    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.6.4");
+	SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.12.2forge");
+	SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.8.9");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.7.10");
-    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.8.9");
 	SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.6.4");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.5.2");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.4.7");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.2.5");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.0");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"beta1.7.3");
+	SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"betahacks");
     SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"alpha1.1.2");
-    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"betahacks");
-    SendMessage(hDropdownVersion, CB_ADDSTRING, 0, (LPARAM)"1.12.2forge"); // Added 1.12.2 Forge
+    
 
     // Set default selection to beta1.7.3
     SendMessage(hDropdownVersion, CB_SETCURSEL, 8, 0);
