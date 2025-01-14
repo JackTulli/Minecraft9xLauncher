@@ -1,19 +1,15 @@
 !define BLANK ""
-C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\&
-launcher.obj : C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9&
-xLauncher-main\launcher.cpp .AUTODEPEND
+C:\Users\Jack\Documents\GitHub\git\launcher.obj : C:\Users\Jack\Documents\Gi&
+tHub\git\launcher.cpp .AUTODEPEND
  @C:
- cd C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-m&
-ain
+ cd C:\Users\Jack\Documents\GitHub\git
  *wpp386 launcher.cpp -i="C:\WATCOM/h;C:\WATCOM/h/nt" -w4 -e25 -zq -od -d2 -&
 6r -bt=nt -fo=.obj -mf -xs -xr
 
-C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-main\&
-Minecraft9xLauncher.exe : C:\Users\Admin\Documents\Minecraft9xLauncher-main1&
-\Minecraft9xLauncher-main\launcher.obj .AUTODEPEND
+C:\Users\Jack\Documents\GitHub\git\Minecraft9xLauncher.exe : C:\Users\Jack\D&
+ocuments\GitHub\git\launcher.obj .AUTODEPEND
  @C:
- cd C:\Users\Admin\Documents\Minecraft9xLauncher-main1\Minecraft9xLauncher-m&
-ain
+ cd C:\Users\Jack\Documents\GitHub\git
  @%write Minecraft9xLauncher.lk1 FIL launcher.obj
  @%append Minecraft9xLauncher.lk1 
 !ifneq BLANK ""

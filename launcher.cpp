@@ -37,11 +37,14 @@ void CreateBatFile(const char *version, const char *username) {
 
         } else if (strcmp(version, "1.6.4") == 0 || strcmp(version, "1.7.10") == 0) {
             // Command for launching Minecraft 1.6.4 and 1.7.10
-		fprintf(fp, "cd resources/versions/%s\n", version);
-		fprintf(fp, "java -Xms64M -Xmx1G -Djava.library.path=\"natives\" ");
-		fprintf(fp, "-cp \"%s.jar;../../libraries/*\" net.minecraft.client.main.Main ", version);
-		fprintf(fp, "--username %s --version %s --gameDir . --assetsDir assets ", username, version);
-		fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username);
+            fprintf(fp, "cd resources\\versions\\%s\n", version);
+            fprintf(fp, "java -Xms512M -Xmx1G -Djava.library.path=\"natives\" ");
+            fprintf(fp, "-cp \"1.6.4.jar;..\\..\\libraries\\jopt-simple-4.5.jar;..\\..\\libraries\\launchwrapper-1.5.jar;..\\..\\libraries\\asm-all-4.1.jar;..\\..\\libraries\\guava-14.0.jar;..\\..\\libraries\\commons-io-2.4.jar;..\\..\\libraries\\commons-lang3-3.1.jar;..\\..\\libraries\\netty-1.6.jar;..\\..\\libraries\\log4j-api-2.0-beta9.jar;..\\..\\libraries\\log4j-core-2.0-beta9.jar;..\\..\\libraries\\lwjgl-2.9.1.jar;..\\..\\libraries\\lwjgl_util-2.9.1.jar;..\\..\\libraries\\gson-2.2.4.jar;..\\..\\libraries\\argo-2.25_fixed.jar;..\\..\\libraries\\codecjorbis-20101023.jar;..\\..\\libraries\\codecwav-20101023.jar;..\\..\\libraries\\libraryjavasound-20101123.jar;..\\..\\libraries\\librarylwjglopenal-20100824.jar;..\\..\\libraries\\soundsystem-20120107.jar\" ");
+            fprintf(fp, "net.minecraft.client.main.Main ");
+            fprintf(fp, "--username %s --version 1.6.4 --gameDir . --assetsDir assets ", username);
+            fprintf(fp, "--accessToken 0 --userProperties {} --uuid %s --userType legacy\n", username);
+
+
 
 
         } else  if (strcmp(version, "1.12.2forge") == 0) {

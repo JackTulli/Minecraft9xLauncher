@@ -1,0 +1,51 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 1/14/25 4:19 PM
+Description: Initializing game
+
+java.lang.NoClassDefFoundError: argo/saj/InvalidSyntaxException
+	at atv.O(SourceFile:345)
+	at atv.d(SourceFile:599)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+Caused by: java.lang.ClassNotFoundException: argo.saj.InvalidSyntaxException
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 3 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at atv.O(SourceFile:345)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at atv.d(SourceFile:599)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.6.4
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_421, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 383082840 bytes (365 MB) / 514850816 bytes (491 MB) up to 954728448 bytes (910 MB)
+	JVM Flags: 2 total; -Xms512M -Xmx1G
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Suspicious classes: No suspicious classes found.
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: 1.6.4
+	LWJGL: 2.9.0
+	OpenGL: NVIDIA TITAN Xp COLLECTORS EDITION/PCIe/SSE2 GL version 4.6.0 NVIDIA 566.36, NVIDIA Corporation
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Pack: Default
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null
