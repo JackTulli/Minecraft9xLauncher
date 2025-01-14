@@ -1,1 +1,5 @@
-Compile with openwatcom 1.9 will run on windows 95 and up. minecraft will only run on windows 98 with kernelx and up. you must supply your own jars. I have only tested up to version 1.5.2. some minor changes would need to be made to use 1.6.4 and above.     
+Compile with OpenWatcom 1.9, and the program will run on Windows 95 and later versions. Minecraft itself, however, will only run on Windows 98 and above when using KernelEx. You will need to provide your own Minecraft JAR files.
+
+The launcher now supports versions of Minecraft up to 1.12.2 with Forge, but keep in mind that Forge versions higher than 1.8.9 require significant effort to get Java 8 running on Windows 98. Minecraft 1.12.2 is primarily recommended for Windows 2000 and XP systems.
+
+This launcher is exceptionally fast due to its streamlined Win32 C++ codebase. Since it’s not a Java-based program, it offers significantly better performance compared to other Minecraft launchers.
