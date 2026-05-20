@@ -1,0 +1,33 @@
+#include <windows.h>
+
+MAINICON   ICON   "resources/minecraft.ico"
+SIDEBAR    BITMAP "resources/background.bmp"
+LICENSE    RCDATA "LICENSE"
+
+1 VERSIONINFO
+FILEVERSION    1,7,0,0
+PRODUCTVERSION 1,7,0,0
+FILEFLAGSMASK  0x3FL
+FILEFLAGS      0
+FILEOS         VOS_NT_WINDOWS32
+FILETYPE       VFT_APP
+FILESUBTYPE    0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",      "JackTulli\0"
+            VALUE "FileDescription",  "Minecraft9xLauncher Setup\0"
+            VALUE "FileVersion",      "1.7.0\0"
+            VALUE "InternalName",     "installer\0"
+            VALUE "OriginalFilename", "Minecraft9xLauncher-Setup.exe\0"
+            VALUE "ProductName",      "Minecraft9xLauncher\0"
+            VALUE "ProductVersion",   "1.7.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04E4
+    END
+END

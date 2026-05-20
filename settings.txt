@@ -1,7 +1,7 @@
-version=1.12.2forge
-username=Player
+version=1.5.2
+username=OhThatYes
 ram_max_mb=1024
 ram_min_mb=256
-nosound=1
-gl_mode=gl-mesa-llvmpipe
+nosound=0
+gl_mode=default
 java=C:\Program Files (x86)\Java\jre-1.8\bin\java.exe

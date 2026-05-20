@@ -1,21 +1,31 @@
-Win9x Minecraft Launcher v1.6.0
+Win9x Minecraft Launcher v1.7.0
 
-What's new in OpenGL handling:
-  Default (system OpenGL)         - normal hardware path
-  Software fallback (LWJGL)       - lets LWJGL drop to MS software
-                                     OpenGL 1.1; free on every Windows.
-  Mesa 26 llvmpipe (XP/7/10/wine) - modern OpenGL 4.6 in software.
-  Mesa 26 softpipe (XP/7/10/wine) - simpler softpipe variant.
-  Mesa9x Win98/Me llvmpipe        - Mesa ported to Win98/Me. Drop-in.
-  Mesa9x Win98/Me softpipe        - smaller mesa9x build, no JIT.
+What's new:
+- Sound now works on every version. The launcher routes HTTP
+  through betacraft.uk:80, which mirrors the dead Mojang resource
+  bucket. Beta/alpha versions populate <gameDir>\resources\ on
+  first launch; modern versions reach legacy skin/cape URLs
+  through the same proxy. Use Java 6 or higher for sound -
+  Java 5's OpenAL stack doesn't play .ogg in beta 1.7.3.
+- 32-bit Java auto-detection. The launcher scans JAVA_HOME, the
+  JavaSoft registry, and Program Files (both views) for java.exe,
+  filters out 64-bit installs via PE header, and lists what
+  remains. Pick from the dropdown - no more editing settings.txt.
+- "Install Java..." button. Drop installers under resources\jre\
+  (three ship in-tree: 1.5.0_12, 1.6.10, 8u51 - all i586) and
+  click the button to run any of them. 1.6.10 or 8u51 are the
+  safe defaults; 1.5.0_12 only for very early versions.
+- 1.12.2 vanilla removed from the dropdown (its assets folder
+  isn't bundled, world-load NPEs without it). 1.12.2 with Forge
+  still works.
+- 64-bit natives (lwjgl64.dll, OpenAL64.dll, jinput-*_64.dll,
+  SAPIWrapper_x64.dll) stripped from every version folder. They
+  served no purpose - the launcher targets 32-bit Windows - and
+  broke launches on real 32-bit systems.
 
-Switching modes is free - the launcher cleans up any DLLs it copied
-last run before installing the new one. Drop your own builds (Mesa,
-SwiftShader, anything that ships an opengl32.dll) under resources\gl\
-and they appear in the dropdown automatically.
-
-Other recent fixes:
-- 1.7.10 actually works (was using 1.6.4's classpath).
+Previously, in v1.6.0:
+- Pluggable OpenGL backends (Mesa 26, Mesa9x Win98/Me, LWJGL
+  software fallback) under resources\gl\.
 - LWJGL 2.9.3 base98 (no KernelEx) for all modern versions.
 - Min and Max heap (Xms / Xmx) editable, persisted.
 - "No sound" checkbox skips OpenAL.

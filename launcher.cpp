@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define LAUNCHER_VERSION "1.6.0"
+#define LAUNCHER_VERSION "1.7.0"
 #define MAX_CLASSPATH    16384
 #define MAX_LAUNCH_CMD   32768
 #define ID_BTN_PLAY          1
@@ -969,7 +969,15 @@ static void LaunchVersion(const char *version, const char *username) {
     GetCurrentDirectoryA(sizeof(workDir), workDir);
     sprintf(fullWorkDir, "%s\\resources\\versions\\%s", workDir, version);
 
-    _snprintf(cmd, MAX_LAUNCH_CMD, "\"%s\" %s -cp \"%s\" %s %s",
+    /* Route HTTP through Betacraft's proxy for every version. Beta- and
+       alpha-era Minecraft fetches sounds from the dead s3.amazonaws.com/
+       MinecraftResources/ bucket; Betacraft mirrors it. The mock login
+       endpoint also keeps newer versions from hanging on auth. Doesn't
+       touch HTTPS, so modern auth/skins keep working directly. */
+    _snprintf(cmd, MAX_LAUNCH_CMD,
+              "\"%s\" -Dhttp.proxyHost=betacraft.uk -Dhttp.proxyPort=80 "
+              "-Dhttp.nonProxyHosts=\"localhost|127.*\" "
+              "%s -cp \"%s\" %s %s",
               g_cfgJava, jvmS, cpS, mainClass, gameS);
     cmd[MAX_LAUNCH_CMD - 1] = 0;
 
