@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# OpenWatcom build artifacts
+*.err
+*.map
+*.sym
+*.lk1
+*.mk1
+
+# Launcher runtime artifacts
+log.txt
+run.bat

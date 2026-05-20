@@ -1,26 +1,26 @@
-[15:46:08] [Client thread/INFO]: Setting user: Type
-[15:46:08] [Client thread/INFO]: (Session ID is token:0:Type)
-[15:46:09] [Client thread/INFO]: LWJGL Version: 2.9.4
-[15:46:10] [Client thread/INFO]: Reloading ResourceManager: Default
-[15:46:10] [Client thread/ERROR]: Couldn't initialize twitch stream
-[15:46:10] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[15:46:10] [Thread-4/INFO]: Initializing LWJGL OpenAL
-[15:46:10] [Thread-4/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[15:46:10] [Thread-4/INFO]: OpenAL initialized.
-[15:46:11] [Sound Library Loader/INFO]: Sound engine started
-[15:46:11] [Client thread/INFO]: Created: 512x512 textures-atlas
-[15:46:12] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[15:46:15] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:gui.button.press
-[15:46:16] [Server thread/INFO]: Starting integrated minecraft server version 1.8.9
-[15:46:16] [Server thread/INFO]: Generating keypair
-[15:46:17] [Server thread/INFO]: Preparing start region for level 0
-[15:46:17] [Server thread/INFO]: Changing view distance to 8, from 10
-[15:46:18] [Server thread/INFO]: Type[local:E:041eb0af] logged in with entity id 365 at (-422.3264281015779, 63.0, 328.80673915950393)
-[15:46:18] [Server thread/INFO]: Type joined the game
-[15:46:18] [Client thread/FATAL]: Error executing task
+[17:28:07] [Client thread/INFO]: Setting user: Player
+[17:28:07] [Client thread/INFO]: (Session ID is token:0:a01e3843-e521-3998-958a-f459800e4d11)
+[17:28:08] [Client thread/INFO]: LWJGL Version: 2.9.4
+[17:28:09] [Client thread/INFO]: Reloading ResourceManager: Default
+[17:28:09] [Client thread/ERROR]: Couldn't initialize twitch stream
+[17:28:09] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:28:10] [Thread-4/INFO]: Initializing LWJGL OpenAL
+[17:28:10] [Thread-4/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:28:10] [Thread-4/INFO]: OpenAL initialized.
+[17:28:10] [Sound Library Loader/INFO]: Sound engine started
+[17:28:11] [Client thread/INFO]: Created: 512x512 textures-atlas
+[17:28:12] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[17:28:13] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:gui.button.press
+[17:28:14] [Server thread/INFO]: Starting integrated minecraft server version 1.8.9
+[17:28:14] [Server thread/INFO]: Generating keypair
+[17:28:14] [Server thread/INFO]: Preparing start region for level 0
+[17:28:15] [Server thread/INFO]: Changing view distance to 2, from 10
+[17:28:16] [Server thread/INFO]: Player[local:E:8e2e87d3] logged in with entity id 305 at (-934.2490784681182, 64.0, 889.6559661222304)
+[17:28:16] [Server thread/INFO]: Player joined the game
+[17:28:16] [Client thread/FATAL]: Error executing task
 java.util.concurrent.ExecutionException: java.lang.UnsupportedOperationException: direct buffer
-	at java.util.concurrent.FutureTask.report(Unknown Source) ~[?:1.8.0_421]
-	at java.util.concurrent.FutureTask.get(Unknown Source) ~[?:1.8.0_421]
+	at java.util.concurrent.FutureTask.report(Unknown Source) ~[?:1.8.0_411]
+	at java.util.concurrent.FutureTask.get(Unknown Source) ~[?:1.8.0_411]
 	at g.a(SourceFile:45) [1.8.9.jar:?]
 	at ave.av(SourceFile:881) [1.8.9.jar:?]
 	at ave.a(SourceFile:325) [1.8.9.jar:?]
@@ -32,28 +32,29 @@ Caused by: java.lang.UnsupportedOperationException: direct buffer
 	at gg.a(SourceFile:52) ~[1.8.9.jar:?]
 	at gg.a(SourceFile:9) ~[1.8.9.jar:?]
 	at fh$1.run(SourceFile:13) ~[1.8.9.jar:?]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:1.8.0_421]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:1.8.0_421]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:1.8.0_411]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:1.8.0_411]
 	at g.a(SourceFile:44) ~[1.8.9.jar:?]
 	... 3 more
-[15:46:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:minecart.base
-[15:46:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:minecart.base
-[15:46:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:mob.pig.say
-[15:46:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:music.game
-[15:46:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:mob.pig.say
-[15:46:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:mob.pig.say
-[15:46:20] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:mob.pig.say
-[15:46:20] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:step.grass
-[15:46:20] [Server thread/INFO]: Saving and pausing game...
-[15:46:20] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[15:46:20] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[15:46:20] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[15:46:21] [Client thread/INFO]: Stopping!
-[15:46:21] [Client thread/INFO]: SoundSystem shutting down...
-[15:46:21] [Server thread/INFO]: Stopping server
-[15:46:21] [Server thread/INFO]: Saving players
-[15:46:21] [Server thread/INFO]: Saving worlds
-[15:46:21] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[15:46:21] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[15:46:21] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[15:46:21] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[17:28:17] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:step.grass
+[17:28:18] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:dig.grass
+[17:28:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:dig.grass
+[17:28:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:dig.grass
+[17:28:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:step.grass
+[17:28:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:dig.grass
+[17:28:19] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:step.grass
+[17:28:20] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:dig.grass
+[17:28:20] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:music.game.creative
+[17:28:20] [Server thread/INFO]: Saving and pausing game...
+[17:28:20] [Server thread/INFO]: Saving chunks for level 'New World-'/Overworld
+[17:28:20] [Server thread/INFO]: Saving chunks for level 'New World-'/Nether
+[17:28:20] [Server thread/INFO]: Saving chunks for level 'New World-'/The End
+[17:28:21] [Client thread/INFO]: Stopping!
+[17:28:21] [Client thread/INFO]: SoundSystem shutting down...
+[17:28:21] [Server thread/INFO]: Stopping server
+[17:28:21] [Server thread/INFO]: Saving players
+[17:28:21] [Server thread/INFO]: Saving worlds
+[17:28:21] [Server thread/INFO]: Saving chunks for level 'New World-'/Overworld
+[17:28:21] [Server thread/INFO]: Saving chunks for level 'New World-'/Nether
+[17:28:21] [Server thread/INFO]: Saving chunks for level 'New World-'/The End
+[17:28:22] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

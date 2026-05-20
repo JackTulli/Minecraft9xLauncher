@@ -1,10 +1,10 @@
 version:1343
 invertYMouse:false
 mouseSensitivity:0.5
-fov:0.0
+fov:1.0
 gamma:0.0
 saturation:0.0
-renderDistance:8
+renderDistance:2
 guiScale:0
 particles:0
 bobView:true
@@ -12,8 +12,8 @@ anaglyph3d:false
 maxFps:120
 fboEnable:true
 difficulty:2
-fancyGraphics:true
-ao:2
+fancyGraphics:false
+ao:0
 renderClouds:true
 resourcePacks:[]
 incompatibleResourcePacks:[]
@@ -26,7 +26,7 @@ chatLinksPrompt:true
 chatOpacity:1.0
 snooperEnabled:true
 fullscreen:false
-enableVsync:true
+enableVsync:false
 useVbo:true
 hideServerAddress:false
 advancedItemTooltips:false

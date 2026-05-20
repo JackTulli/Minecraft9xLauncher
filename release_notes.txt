@@ -1,0 +1,27 @@
+Win9x Minecraft Launcher v1.6.0
+
+What's new in OpenGL handling:
+  Default (system OpenGL)         - normal hardware path
+  Software fallback (LWJGL)       - lets LWJGL drop to MS software
+                                     OpenGL 1.1; free on every Windows.
+  Mesa 26 llvmpipe (XP/7/10/wine) - modern OpenGL 4.6 in software.
+  Mesa 26 softpipe (XP/7/10/wine) - simpler softpipe variant.
+  Mesa9x Win98/Me llvmpipe        - Mesa ported to Win98/Me. Drop-in.
+  Mesa9x Win98/Me softpipe        - smaller mesa9x build, no JIT.
+
+Switching modes is free - the launcher cleans up any DLLs it copied
+last run before installing the new one. Drop your own builds (Mesa,
+SwiftShader, anything that ships an opengl32.dll) under resources\gl\
+and they appear in the dropdown automatically.
+
+Other recent fixes:
+- 1.7.10 actually works (was using 1.6.4's classpath).
+- LWJGL 2.9.3 base98 (no KernelEx) for all modern versions.
+- Min and Max heap (Xms / Xmx) editable, persisted.
+- "No sound" checkbox skips OpenAL.
+
+3dfx Voodoo note: real hardware uses 3dfx's own ICD via "Default";
+Voodoo OpenGL caps near 1.2 so only alpha/beta..1.5.2 will render.
+
+Discord: jtofexstinction.
+ENJOY!

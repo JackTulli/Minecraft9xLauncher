@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -v resources/versions/*/natives/*_64.dll resources/versions/*/natives/lwjgl64.dll resources/versions/*/natives/OpenAL64.dll resources/versions/*/natives/SAPIWrapper_x64.dll 2>&1 | grep -v \"No such\")",
+      "PowerShell($env:WATCOM = \\(Resolve-Path .\\\\WATCOM\\).Path; $env:INCLUDE = \"$env:WATCOM\\\\h;$env:WATCOM\\\\h\\\\nt\"; $env:PATH = \"$env:WATCOM\\\\binnt;$env:PATH\"; Remove-Item -ErrorAction SilentlyContinue launcher.obj, launcher.err, Minecraft9xLauncher.exe, Minecraft9xLauncher.map, Minecraft9xLauncher.sym, Minecraft9xLauncher.lk1; & wpp386.exe launcher.cpp -w4 -e25 -zq -od -d2 -6r -bt=nt -fo=.obj -mf -xs -xr 2>&1 | Select-Object -Last 60)",
+      "PowerShell($p = \"$env:APPDATA\\\\.minecraft\\\\assets\"; if \\(Test-Path $p\\) { Get-ChildItem $p -Name; \"--- indexes:\"; Get-ChildItem \"$p\\\\indexes\" -Name -ErrorAction SilentlyContinue } else { \"no .minecraft/assets at $p\" })"
+    ]
+  }
+}
