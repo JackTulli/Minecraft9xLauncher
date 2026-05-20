@@ -3,5 +3,5 @@ username=Player
 ram_max_mb=1024
 ram_min_mb=256
 nosound=1
-gl_mode=default
+gl_mode=gl-mesa-llvmpipe
 java=C:\Program Files (x86)\Java\jre-1.8\bin\java.exe
