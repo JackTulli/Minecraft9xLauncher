@@ -38,4 +38,5 @@ Discord: jtofexstinction.
 
 <!-- TODO: replace the screenshot below with a fresh one showing the new Java dropdown + Install button. Drag-drop a PNG into GitHub's editor and it'll generate a new user-attachments URL. -->
 
-![image](https://github.com/user-attachments/assets/79a377fb-a174-4d74-b6ac-c6f2ced25b08)
+<img width="1914" height="1198" alt="Minecraft9x" src="https://github.com/user-attachments/assets/5ba1a93e-b0aa-4107-beb5-26ee2e9081ed" />
+
